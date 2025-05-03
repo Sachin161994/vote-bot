@@ -13,18 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11  # ✅ Compatible with Ubuntu 24.04
+          python-version: 3.11
 
-      - name: Install dependencies
+      - name: Install Chromium and dependencies
         run: |
-          pip install selenium
           sudo apt-get update
           sudo apt-get install -y chromium-browser chromium-chromedriver
-          sudo cp /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-          sudo chmod +x /usr/bin/chromedriver
+          pip install selenium
 
       - name: Run Vote Script
         env:
