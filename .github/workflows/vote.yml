@@ -2,7 +2,7 @@ name: Vote Every 30 Minutes
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # Every 30 mins
+    - cron: "*/36 * * * *"  # Every 36 mins
   workflow_dispatch:
 
 jobs:
